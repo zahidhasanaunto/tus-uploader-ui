@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>LOOX BULK FILE UPLOADER</title>
+
+    <link href="https://transloadit.edgly.net/releases/uppy/v1.15.0/uppy.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>TUS BULK FILE UPLOADER</h1>
+    <p>https://tus.appxify.com/files/</p>
+
+    <div class="grid">
+        <div class="column-full">
+            <div class="UppyInput"></div>
+            <div class="UppyInput-Progress"></div>
+        </div>
+    </div>
+
+    <script src="https://transloadit.edgly.net/releases/uppy/v1.15.0/uppy.min.js"></script>
+    <script>
+        var uppy = Uppy.Core()
+            .use(Uppy.Dashboard, {
+                inline: true,
+                target: ".UppyInput",
+            })
+            .use(Uppy.Tus, { endpoint: "https://tus.appxify.com/files/" })
+            .use(Uppy.DragDrop, { target: '.UppyInput' })
+
+        uppy.setMeta({
+            jobId: "6e78f4b2-81a1-4a19-aa8b-a852a2946e12",
+        })
+
+        uppy.on("complete", (result) => {
+            console.log(
+                "Upload complete! We’ve uploaded these files:",
+                result.successful
+            );
+        });
+    </script>
+</body>
+
+</html>
