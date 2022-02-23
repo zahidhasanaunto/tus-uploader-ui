@@ -8,7 +8,7 @@
 
 <body>
     <h1>TUS BULK FILE UPLOADER</h1>
-    <p>https://tus.appxify.com/files/</p>
+    <p>http://103.204.80.90:5008/files/</p>
 
     <div class="grid">
         <div class="column-full">
@@ -24,7 +24,7 @@
                 inline: true,
                 target: ".UppyInput",
             })
-            .use(Uppy.Tus, { endpoint: "https://tus.appxify.com/files/" })
+            .use(Uppy.Tus, { endpoint: "http://103.204.80.90:5008/files/" })
             .use(Uppy.DragDrop, { target: '.UppyInput' })
 
         uppy.setMeta({
